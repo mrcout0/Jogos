@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar Jogos por Categoria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .filter-buttons button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        .games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .game {
+            flex: 1 1 calc(33.333% - 40px);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .game img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Filtrar Jogos por Categoria</h1>
+        </div>
+        <div class="filter-buttons">
+            <button onclick="filterGames('all')">Todos</button>
+            <button onclick="filterGames('adventure')">Aventura</button>
+            <button onclick="filterGames('rpg')">RPG</button>
+            <button onclick="filterGames('horror')">Terror</button>
+        </div>
+        <div class="games">
+            <div class="game adventure">
+                <h2>Super Mario Bros</h2>
+                <img src="aventura 3 mario.jpg" alt="Jogo de Aventura 1">
+                <p>Neste jogo, você controla Mario, ou seu irmão Luigi no modo multijogador, enquanto viajam pelo Reino Cogumelo para resgatar a Princesa Peach de Bowser.</p>
+            </div>
+            <div class="game rpg">
+                <h2>Sword and Glory</h2>
+                <img src="RPG.jpg" alt="Sword and Glory">
+                <p>Neste jogo você controla Alfarr, um bravo guerreiro em busca de vingança do seu reino. seu objetivo é acabar com todos inimigos e resgatar a glória do seu reino.</p>
+            </div>
+            <div class="game horror">
+                <h2>Jogos Mortais</h2>
+                <img src="TERROR.jpg" alt="Jogos Mortais">
+                <p>Neste jogo, seu objetivo, é sair com vida de um cativeiro onde você está preso.</p>
+            </div>
+            <div class="game adventure">
+                <h2>Golden Axe</h2>
+                <img src="aventura2.jpg" alt="Jogo de Aventura 2">
+                <p>Uma entidade maléfica conhecida como Death Adder capturou o rei e sua filha, mantendo os dois em cativeiro dentro de seu castelo. Death Adder também encontra o Golden Axe (Machado de Ouro), que é o símbolo de Yuria, com isso, ele ameaça destruir tanto o machado quanto a família real, a menos que o povo de Yuria o aceite como governante.</p>
+            </div>
+            <div class="game rpg">
+                <h2>Sekiro</h2>
+                <img src="RPG 2.jpg" alt="Jogo de RPG 2">
+                <p>Junte-se com Sekiro para derrotar todos os monstros que artomentam a sua vila. </p>
+            </div>
+            <div class="game horror">
+                <h2>Escape Jason</h2>
+                <img src="TERROR 2.jpg" alt="Jogo de Terror 2">
+                <p>Neste jogo, controle Kate. uma sobrevivente que tenta escapar do feroz assassino Jason</p>
+            </div>
+            <div class="game adventure">
+                <h2>Castlevania</h2>
+                <img src="AVENTURA.jpg" alt="Jogo de Aventura 2">
+                <p>Outro século se passou e Dracula desperta de seu sono com um plano: se ele fosse derrotado de novo, ele não seria o único a morrer. Ele rapidamente chamou a atenção de um novo Belmont: Simon Belmont, tataraneto de Christopher que foi treinado com a experiência dos dois grandes caçadores de vampiros antes dele..</p>
+            </div>
+            <div class="game rpg">
+                <h2>Run Kenny!</h2>
+                <img src="RPG3.png" alt="Jogo de RPG 2">
+                <p>Kenny é um jovem rapaz que coleciona animais lutadores. e com eles, você embarca em uma aventura divertida e com vários inimigos para enfrentar. Bole sua estratégia e que vença o melhor!</p>
+            </div>
+            <div class="game horror">
+                <h2>Dawn of the Dead</h2>
+                <img src="TERROR 3.jpg" alt="Jogo de Terror 2">
+                <p>Sobreviva a uma orda de mortos vivos com recursos limitados e encontrados durante o jogo.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function filterGames(category) {
+            const games = document.querySelectorAll('.game');
+            games.forEach(game => {
+                if (category === 'all') {
+                    game.style.display = 'block';
+                } else {
+                    if (game.classList.contains(category)) {
+                        game.style.display = 'block';
+                    } else {
+                        game.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
